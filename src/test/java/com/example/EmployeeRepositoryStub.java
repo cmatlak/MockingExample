@@ -3,12 +3,15 @@ package com.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeRepositoryTestDouble implements EmployeeRepository{
-private List<Employee> employees;
+public class EmployeeRepositoryStub implements EmployeeRepository{
 
 
-    public EmployeeRepositoryTestDouble(){
+
+
+    private List<Employee> employees;
+    public EmployeeRepositoryStub(){
         this.employees = new ArrayList<>();
+
     }
     @Override
     public List<Employee> findAll() {
@@ -17,7 +20,9 @@ private List<Employee> employees;
 
     @Override
     public Employee save(Employee e) {
-        employees.add(e);
         return e;
     }
+
+
+
 }

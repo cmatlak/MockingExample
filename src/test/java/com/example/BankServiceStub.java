@@ -1,6 +1,6 @@
 package com.example;
 
-public class BankserviceMock implements BankService{
+public class BankServiceStub implements BankService{
     @Override
     public void pay(String id, double amount) {
 
