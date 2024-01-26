@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeTest {
     @Test
     void testEmployeeInitialization() {
-        // Skapa en ny Employee
+
         Employee employee = new Employee("1", 50000);
 
-        // Verifiera att attributen har rätt värden efter konstruktion
+
         assertEquals("1", employee.getId());
         assertEquals(50000, employee.getSalary(), 0.001);
-        assertFalse(employee.isPaid()); // Förväntar oss att isPaid är false initialt
+        assertFalse(employee.isPaid());
 
 
     }
@@ -29,7 +29,7 @@ class EmployeeTest {
         employee.setSalary(60000);
         employee.setPaid(true);
 
-        // Verifiera att ändringar genomfördes korrekt
+
         assertEquals("2", employee.getId());
         assertEquals(60000, employee.getSalary(), 0.001);
         assertTrue(employee.isPaid());
@@ -40,7 +40,7 @@ class EmployeeTest {
     void toStringMethodTest() {
 
         Employee employee = new Employee("2",60000);
-        // Testa toString-metoden
+
         String expectedToString = "Employee [id=2, salary=60000.0]";
         assertEquals(expectedToString, employee.toString());
 
