@@ -52,7 +52,11 @@ private StringCalculator  calculator;
         assertEquals(3,calculator.add("//;\n1;2"));
     }
 
-
+    @Test
+    @DisplayName("Test add with default delimiter")
+    void testAddWithDefaultDelimiter() {
+        assertEquals(10,calculator.add("1\n2\n3,4"));
+    }
 
 }
 
