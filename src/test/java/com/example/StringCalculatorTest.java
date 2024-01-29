@@ -27,4 +27,12 @@ public class StringCalculatorTest {
 
 
     }
+    @Test
+    @DisplayName("Test double numbers returns sum")
+    void testDoubleNumbersReturnsSum() {
+        StringCalculator calculator = new StringCalculator();
+        int result = calculator.add("9,11");
+        assertEquals(20,result);
+    }
+
 }
