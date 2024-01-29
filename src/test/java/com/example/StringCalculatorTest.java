@@ -17,5 +17,14 @@ public class StringCalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Test add single number should return same number")
+    void testAddSingleNumberShouldReturnSameNumber() {
+        StringCalculator calculator = new StringCalculator();
 
+        int result = calculator.add("5");
+        assertEquals(5,result);
+
+
+    }
 }
