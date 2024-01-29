@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTest {
 
@@ -58,5 +59,14 @@ private StringCalculator  calculator;
         assertEquals(10,calculator.add("1\n2\n3,4"));
     }
 
+    @Test
+    @DisplayName("Test with negatives")
+    void testWithNegatives() {
+        String numbers = "1,-3,4,-10";
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,()-> {
+            calculator.add(numbers);
+        });
+        assertEquals("Negatives not allowed [-3, -10]", exception.getMessage());
+    }
 }
 
