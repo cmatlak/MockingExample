@@ -12,7 +12,7 @@ public class StringCalculatorTest {
     @DisplayName("Test add empty string returns zero")
     void testAddEmptyStringReturnsZero() {
         StringCalculator calculator = new StringCalculator();
-        int result = calculator.add("");
+        int result = calculator.add("/");
         assertEquals(0, result);
 
     }
@@ -31,7 +31,7 @@ public class StringCalculatorTest {
     @DisplayName("Test double numbers returns sum")
     void testDoubleNumbersReturnsSum() {
         StringCalculator calculator = new StringCalculator();
-        int result = calculator.add("9,11");
+        int result = calculator.add("9/11");
         assertEquals(20,result);
     }
 
@@ -39,7 +39,7 @@ public class StringCalculatorTest {
     @DisplayName("Test multiple numbers return sum")
     void testMultipleNumbersReturnSum() {
         StringCalculator calculator = new StringCalculator();
-        int result = calculator.add("1,2,3,4,5,6");
+        int result = calculator.add("1,2,3/4,5,6");
         assertEquals(21,result);
     }
 }
