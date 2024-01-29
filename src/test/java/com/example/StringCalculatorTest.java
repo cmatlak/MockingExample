@@ -35,4 +35,11 @@ public class StringCalculatorTest {
         assertEquals(20,result);
     }
 
+    @Test
+    @DisplayName("Test multiple numbers return sum")
+    void testMultipleNumbersReturnSum() {
+        StringCalculator calculator = new StringCalculator();
+        int result = calculator.add("1,2,3,4,5,6");
+        assertEquals(21,result);
+    }
 }
