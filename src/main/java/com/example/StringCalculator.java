@@ -26,17 +26,18 @@ public class StringCalculator {
         String[] nums = numsString.split("[,\n"+delimiter+"/ ]");
         int sum = 0;
         for (String num : nums) {
-            int neg = Integer.parseInt(num);
-            if (neg <0 ){
-                negatives.add(neg);
+            if (!num.isEmpty()) {
+                int neg = Integer.parseInt(num);
+                if (neg < 0) {
+                    negatives.add(neg);
 
-            } else if (neg < 1000) {
-                sum += neg;
+                } else if (neg < 1000) {
+                    sum += neg;
+
+                }
 
             }
-
         }
-
 
 
 

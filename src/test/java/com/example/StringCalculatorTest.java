@@ -50,13 +50,15 @@ private StringCalculator  calculator;
     @Test
     @DisplayName("Test add with custom delimiter")
     void testAddWithCustomDelimiter() {
-        assertEquals(3,calculator.add("//;\n1;2"));
+        int result = calculator.add("//;\n1;2");
+        assertEquals(3,result);
     }
 
     @Test
     @DisplayName("Test add with default delimiter")
     void testAddWithDefaultDelimiter() {
-        assertEquals(10,calculator.add("1\n2\n3,4"));
+        int result = calculator.add("1\n2\n3,4");
+        assertEquals(10,result);
     }
 
     @Test
@@ -72,7 +74,16 @@ private StringCalculator  calculator;
     @Test
     @DisplayName("Test add larger than thousand")
     void testAddLargerThanThousand() {
-        assertEquals(1,calculator.add("1000,1"));
+        int result = calculator.add("1000,1");
+        assertEquals(1,result);
     }
+
+    @Test
+    @DisplayName("Test with variable length of delimiter")
+    void testWithVariableLengthOfDelimiter() {
+        int result = calculator.add("//[***]\n\n\n1**2***,,,,3");
+        assertEquals(6,result);
+    }
+
 }
 
