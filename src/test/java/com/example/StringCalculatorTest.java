@@ -85,5 +85,11 @@ private StringCalculator  calculator;
         assertEquals(6,result);
     }
 
+    @Test
+    @DisplayName("Test with multiple delimiters")
+    void testWithMultipleDelimiters() {
+        int result = calculator.add("//[*][%]\n1*2%3");
+        assertEquals(6,result);
+    }
 }
 
