@@ -68,5 +68,11 @@ private StringCalculator  calculator;
         });
         assertEquals("Negatives not allowed [-3, -10]", exception.getMessage());
     }
+
+    @Test
+    @DisplayName("Test add larger than thousand")
+    void testAddLargerThanThousand() {
+        assertEquals(1,calculator.add("1000,1"));
+    }
 }
 

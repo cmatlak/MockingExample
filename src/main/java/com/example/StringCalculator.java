@@ -30,10 +30,16 @@ public class StringCalculator {
             if (neg <0 ){
                 negatives.add(neg);
 
+            } else if (neg < 1000) {
+                sum += neg;
+
             }
 
-            sum += Integer.parseInt(num);
         }
+
+
+
+
             if (!negatives.isEmpty()){
                 throw new IllegalArgumentException("Negatives not allowed " + negatives);
             }
