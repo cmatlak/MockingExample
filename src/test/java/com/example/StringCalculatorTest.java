@@ -19,7 +19,7 @@ private StringCalculator  calculator;
     @Test
     @DisplayName("Test add empty string returns zero")
     void testAddEmptyStringReturnsZero() {
-        int result = calculator.add("/");
+        int result = calculator.add("");
         assertEquals(0, result);
 
     }
@@ -36,14 +36,14 @@ private StringCalculator  calculator;
     @Test
     @DisplayName("Test double numbers returns sum")
     void testDoubleNumbersReturnsSum() {
-        int result = calculator.add("9/11");
+        int result = calculator.add("10,10");
         assertEquals(20,result);
     }
 
     @Test
     @DisplayName("Test multiple numbers return sum")
     void testMultipleNumbersReturnSum() {
-        int result = calculator.add("1,2,3/4,5,6");
+        int result = calculator.add("1,2,3,4,5,6");
         assertEquals(21,result);
     }
 
@@ -91,5 +91,11 @@ private StringCalculator  calculator;
         int result = calculator.add("//[*][%]\n1*2%3");
         assertEquals(6,result);
     }
+@Test
+@DisplayName("Testing with multiple delimiters of varying length")
+void testingWithMultipleDelimitersOfVaryingLength() {
+        int result = calculator.add("//[***][%%%]\n1***3%%%%2");
+        assertEquals(6,result);
 }
 
+}
